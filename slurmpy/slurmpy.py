@@ -140,7 +140,7 @@ class Slurm(object):
             res = subprocess.check_output(args).strip()
             print(res, file=sys.stderr)
             self.name = n
-            if not res.startswith(b"Submitted batch"):
+            if not res.startswith("Submitted batch"):
                 return None
             j_id = int(res.split()[-1])
             if itry == 1:
